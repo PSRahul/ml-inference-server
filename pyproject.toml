@@ -7,7 +7,9 @@ authors = [
     { name = "PSRahul", email = "psrahul.ml@gmail.com" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+]
 
 [project.scripts]
 ml-inference-server = "ml_inference_server:main"
@@ -15,3 +17,6 @@ ml-inference-server = "ml_inference_server:main"
 [build-system]
 requires = ["uv_build>=0.12.17,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.fastapi]
+entrypoint="src.ml_inference_server.main:app"
