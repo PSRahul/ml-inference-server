@@ -16,6 +16,7 @@ async def get_health():
 
 @app.post(path="/analyze", response_model=JobResponse)
 async def post_analyze(analyze_request: AnalyzeRequest):
+
     response = JobResponse(
         job_id=str(uuid.uuid4()),
         status="pending",
